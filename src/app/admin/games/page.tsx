@@ -80,7 +80,11 @@ export default async function AdminGamesPage() {
                       <Link href={`/admin/games/${g.id}`} className="btn-sm">
                         ویرایش
                       </Link>
-                      <DeleteButton action={deleteGameAction} id={g.id} />
+                      <DeleteButton
+                        action={deleteGameAction}
+                        id={g.id}
+                        confirmText="این بازی به همراه همه اکانت‌هایش برای همیشه حذف می‌شود. مطمئن هستید؟"
+                      />
                     </div>
                   </td>
                 </tr>

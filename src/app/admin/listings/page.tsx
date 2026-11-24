@@ -94,7 +94,11 @@ export default async function AdminListingsPage({
                     <Link href={`/admin/listings/${l.id}`} className="btn-sm">
                       ویرایش
                     </Link>
-                    <DeleteButton action={deleteListingAction} id={l.id} />
+                    <DeleteButton
+                      action={deleteListingAction}
+                      id={l.id}
+                      confirmText="این اکانت به همراه همه رمزهای موجودش برای همیشه حذف می‌شود. مطمئن هستید؟"
+                    />
                   </div>
                 </td>
               </tr>

@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { and, count, eq, inArray } from "drizzle-orm";
+import { and, count, eq, inArray, isNull } from "drizzle-orm";
 import { getDb } from "@/db";
 import { categories, credentials, games, images, listings } from "@/db/schema";
 import { MAX_IMAGE_BYTES, parseDataUrl } from "@/lib/image-utils";
@@ -111,8 +111,10 @@ export async function deleteCategoryAction(formData: FormData): Promise<void> {
   const id = str(formData, "id");
   if (!id) return;
   const db = await getDb();
+  await db.update(games).set({ categoryId: null }).where(eq(games.categoryId, id));
   await db.delete(categories).where(eq(categories.id, id));
   revalidatePath("/admin/categories");
+  revalidatePath("/admin/games");
 }
 
 // ---------- بازی‌ها ----------
@@ -191,9 +193,13 @@ export async function deleteGameAction(formData: FormData): Promise<void> {
   await db.delete(images).where(and(eq(images.ownerType, "game"), eq(images.ownerId, id)));
   if (listingIds.length > 0) {
     await db.delete(images).where(and(eq(images.ownerType, "listing"), inArray(images.ownerId, listingIds)));
+    await db.delete(credentials).where(and(inArray(credentials.listingId, listingIds), isNull(credentials.orderItemId)));
+    await db.delete(listings).where(inArray(listings.id, listingIds));
   }
   await db.delete(games).where(eq(games.id, id));
   revalidatePath("/admin/games");
+  revalidatePath("/admin/listings");
+  revalidatePath("/");
 }
 
 export async function deleteImageAction(formData: FormData): Promise<void> {
@@ -285,10 +291,12 @@ export async function deleteListingAction(formData: FormData): Promise<void> {
   const db = await getDb();
   const ops: Parameters<typeof db.batch>[0] = [
     db.delete(images).where(and(eq(images.ownerType, "listing"), eq(images.ownerId, id))),
+    db.delete(credentials).where(and(eq(credentials.listingId, id), isNull(credentials.orderItemId))),
     db.delete(listings).where(eq(listings.id, id)),
   ];
   await db.batch(ops);
   revalidatePath("/admin/listings");
+  revalidatePath("/");
 }
 
 // ---------- استخر اکانت ----------
