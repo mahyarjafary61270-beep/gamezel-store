@@ -74,7 +74,13 @@ export default async function CheckoutSuccessPage({
         <p className="mt-3 text-xs text-slate-500">{formatDate(orderRow.createdAt)}</p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link href="/#games" className="glow-btn !px-6 !py-3 text-sm">
+          <Link
+            href={`/panel/orders/${orderRow.id}`}
+            className="glow-btn !px-6 !py-3 text-sm"
+          >
+            مشاهده سفارش در پنل کاربری
+          </Link>
+          <Link href="/#games" className="ghost-btn !px-6 !py-3 text-sm">
             بازگشت به فروشگاه
           </Link>
         </div>

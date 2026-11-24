@@ -79,6 +79,9 @@ export default function Header({ user }: { user: HeaderUser }) {
           </Link>
           {user ? (
             <div className="flex items-center gap-2">
+              <Link href="/panel" className="ghost-btn !px-4 !py-2 text-sm">
+                پنل کاربری
+              </Link>
               {user.role === "admin" && (
                 <Link href="/admin" className="ghost-btn !px-4 !py-2 text-sm">
                   پنل مدیریت
