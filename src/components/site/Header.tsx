@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { logoutAction } from "@/lib/auth-actions";
 
 const NAV = [
   { href: "/#games", label: "بازی‌ها" },
@@ -10,7 +11,9 @@ const NAV = [
   { href: "/#faq", label: "سوالات متداول" },
 ];
 
-export default function Header() {
+type HeaderUser = { name: string; role: string } | null;
+
+export default function Header({ user }: { user: HeaderUser }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -72,9 +75,27 @@ export default function Header() {
               ۰
             </span>
           </Link>
-          <Link href="/login" className="glow-btn !px-4 !py-2 text-sm">
-            ورود
-          </Link>
+          {user ? (
+            <div className="flex items-center gap-2">
+              {user.role === "admin" && (
+                <Link href="/admin" className="ghost-btn !px-4 !py-2 text-sm">
+                  پنل مدیریت
+                </Link>
+              )}
+              <span className="hidden max-w-28 truncate text-sm font-medium text-slate-300 lg:block">
+                {user.name}
+              </span>
+              <form action={logoutAction}>
+                <button type="submit" className="ghost-btn !px-4 !py-2 text-sm">
+                  خروج
+                </button>
+              </form>
+            </div>
+          ) : (
+            <Link href="/login" className="glow-btn !px-4 !py-2 text-sm">
+              ورود
+            </Link>
+          )}
           <button
             onClick={() => setOpen(!open)}
             aria-label="منو"

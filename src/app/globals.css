@@ -128,4 +128,14 @@ body {
   .shine:hover::after {
     @apply -right-full;
   }
+
+  .input-dark {
+    @apply w-full rounded-xl border border-slate-700/60 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition-all duration-300 placeholder:text-slate-500;
+  }
+  .input-dark:focus {
+    @apply border-purple-500/70;
+    box-shadow:
+      0 0 0 3px rgba(168, 85, 247, 0.18),
+      0 0 18px rgba(139, 92, 246, 0.25);
+  }
 }

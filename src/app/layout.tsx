@@ -6,6 +6,7 @@ import "@fontsource/vazirmatn/900.css";
 import "./globals.css";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import { getCurrentUser } from "@/lib/session";
 
 export const metadata: Metadata = {
   title: {
@@ -16,13 +17,15 @@ export const metadata: Metadata = {
     "گیمزل؛ فروشگاه اکانت‌های اورجینال بازی — دوتا ۲، GTA V، FC27 و ده‌ها بازی دیگر با تحویل فوری و ضمانت.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const user = await getCurrentUser();
+
   return (
     <html lang="fa" dir="rtl">
       <body className="flex min-h-screen flex-col">
-        <Header />
+        <Header user={user ? { name: user.name, role: user.role } : null} />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>
