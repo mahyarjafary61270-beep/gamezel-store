@@ -108,7 +108,7 @@ export const images = sqliteTable(
     ownerId: text("owner_id").notNull(),
     mime: text("mime").notNull(),
     alt: text("alt").notNull().default(""),
-    data: blob("data").notNull(),
+    data: blob("data").$type<Uint8Array>().notNull(),
     sortOrder: integer("sort_order").notNull().default(0),
     createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
   },
@@ -156,7 +156,7 @@ export const receipts = sqliteTable(
       .notNull()
       .references(() => orders.id, { onDelete: "cascade" }),
     mime: text("mime").notNull(),
-    data: blob("data").notNull(),
+    data: blob("data").$type<Uint8Array>().notNull(),
     createdAt: integer("created_at", { mode: "timestamp" }).notNull().default(sql`(unixepoch())`),
   },
   (t) => [index("receipts_order_id_idx").on(t.orderId)],

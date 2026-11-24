@@ -138,4 +138,55 @@ body {
       0 0 0 3px rgba(168, 85, 247, 0.18),
       0 0 18px rgba(139, 92, 246, 0.25);
   }
+
+  .admin-card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl;
+  }
+
+  .admin-table {
+    @apply w-full text-sm;
+  }
+  .admin-table thead th {
+    @apply border-b border-white/10 px-3 py-2.5 text-right text-xs font-bold text-slate-400;
+  }
+  .admin-table tbody td {
+    @apply border-b border-white/5 px-3 py-2.5 align-middle;
+  }
+  .admin-table tbody tr:hover {
+    @apply bg-white/[0.03];
+  }
+
+  .nav-item {
+    @apply flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-cyan-200;
+  }
+  .nav-item-active {
+    @apply bg-violet-500/15 text-cyan-200;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-bold;
+  }
+  .badge-success {
+    @apply border-emerald-400/30 bg-emerald-500/15 text-emerald-300;
+  }
+  .badge-warning {
+    @apply border-amber-400/30 bg-amber-500/15 text-amber-300;
+  }
+  .badge-danger {
+    @apply border-rose-400/30 bg-rose-500/15 text-rose-300;
+  }
+  .badge-muted {
+    @apply border-white/10 bg-white/5 text-slate-300;
+  }
+
+  .btn-sm {
+    @apply inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-bold text-slate-200 transition-colors hover:bg-white/10 hover:text-cyan-200;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-1.5 rounded-lg border border-rose-400/30 bg-rose-500/10 px-3 py-1.5 text-xs font-bold text-rose-300 transition-colors hover:bg-rose-500/25;
+  }
+
+  .field-label {
+    @apply mb-1 block text-xs font-bold text-slate-400;
+  }
 }
