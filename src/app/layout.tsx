@@ -6,6 +6,7 @@ import "@fontsource/vazirmatn/900.css";
 import "./globals.css";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import { CartProvider } from "@/components/cart/CartProvider";
 import { getCurrentUser } from "@/lib/session";
 
 export const metadata: Metadata = {
@@ -25,8 +26,10 @@ export default async function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className="flex min-h-screen flex-col">
-        <Header user={user ? { name: user.name, role: user.role } : null} />
-        <main className="flex-1">{children}</main>
+        <CartProvider>
+          <Header user={user ? { name: user.name, role: user.role } : null} />
+          <main className="flex-1">{children}</main>
+        </CartProvider>
         <Footer />
       </body>
     </html>

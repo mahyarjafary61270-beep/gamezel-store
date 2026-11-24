@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { logoutAction } from "@/lib/auth-actions";
+import { useCart } from "@/components/cart/CartProvider";
 
 const NAV = [
   { href: "/#games", label: "بازی‌ها" },
@@ -15,6 +16,7 @@ type HeaderUser = { name: string; role: string } | null;
 
 export default function Header({ user }: { user: HeaderUser }) {
   const [open, setOpen] = useState(false);
+  const { count } = useCart();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-night-950/70 backdrop-blur-xl">
@@ -54,7 +56,7 @@ export default function Header({ user }: { user: HeaderUser }) {
 
         <div className="flex items-center gap-2">
           <Link
-            href="/#games"
+            href="/cart"
             aria-label="سبد خرید"
             className="glass relative grid h-10 w-10 place-items-center rounded-xl text-slate-200 transition-colors hover:text-neon-cyan"
           >
@@ -72,7 +74,7 @@ export default function Header({ user }: { user: HeaderUser }) {
               <path d="M2.5 3h2l2.6 12.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L22.5 7H6" />
             </svg>
             <span className="absolute -left-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-br from-violet-500 to-cyan-500 px-1 text-[11px] font-bold text-white shadow-[0_0_10px_rgba(139,92,246,0.7)]">
-              ۰
+              {count.toLocaleString("fa-IR")}
             </span>
           </Link>
           {user ? (
