@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { and, asc, count, eq, inArray, isNull } from "drizzle-orm";
@@ -6,6 +7,30 @@ import { categories, credentials, games, images, listings } from "@/db/schema";
 import { formatPrice } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const db = await getDb();
+  const game = await db.query.games.findFirst({ where: eq(games.slug, slug) });
+  if (!game || !game.isActive) return {};
+  const description =
+    game.description ||
+    `خرید اکانت ${game.title} با تحویل فوری و ضمانت اصالت — گیمزل`;
+  return {
+    title: game.title,
+    description,
+    openGraph: {
+      title: `${game.title} | گیمزل`,
+      description,
+      locale: "fa_IR",
+      type: "website",
+    },
+  };
+}
 
 export default async function GamePage({
   params,

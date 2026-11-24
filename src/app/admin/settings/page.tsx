@@ -13,6 +13,7 @@ export default async function AdminSettingsPage() {
     bank_name: map.get("bank_name") ?? "",
     telegram_id: map.get("telegram_id") ?? "",
     order_notice: map.get("order_notice") ?? "",
+    site_url: map.get("site_url") ?? "",
   };
 
   return (

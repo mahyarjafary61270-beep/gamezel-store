@@ -6,7 +6,14 @@ import { settings } from "@/db/schema";
 
 export type SettingsState = { error: string | null; message: string | null };
 
-const KEYS = ["card_number", "card_holder", "bank_name", "telegram_id", "order_notice"] as const;
+const KEYS = [
+  "card_number",
+  "card_holder",
+  "bank_name",
+  "telegram_id",
+  "order_notice",
+  "site_url",
+] as const;
 
 export async function saveSettingsAction(_prev: SettingsState, formData: FormData): Promise<SettingsState> {
   const db = await getDb();

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { and, asc, count, eq, isNull } from "drizzle-orm";
@@ -7,6 +8,27 @@ import { credentials, games, images, listings } from "@/db/schema";
 import { formatPrice } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const db = await getDb();
+  const listing = await db.query.listings.findFirst({ where: eq(listings.id, id) });
+  if (!listing || !listing.isActive) return {};
+  return {
+    title: listing.title,
+    description: listing.description || undefined,
+    openGraph: {
+      title: `${listing.title} | گیمزل`,
+      description: listing.description || undefined,
+      locale: "fa_IR",
+      type: "website",
+    },
+  };
+}
 
 export default async function AccountPage({
   params,

@@ -9,13 +9,27 @@ import Footer from "@/components/site/Footer";
 import { CartProvider } from "@/components/cart/CartProvider";
 import { getCurrentUser } from "@/lib/session";
 
+const SITE_TITLE = "گیمزل | فروشگاه اکانت بازی";
+const SITE_DESCRIPTION =
+  "گیمزل؛ فروشگاه اکانت‌های اورجینال بازی — دوتا ۲، GTA V، FC27 و ده‌ها بازی دیگر با تحویل فوری و ضمانت.";
+
 export const metadata: Metadata = {
   title: {
-    default: "گیمزل | فروشگاه اکانت بازی",
+    default: SITE_TITLE,
     template: "%s | گیمزل",
   },
-  description:
-    "گیمزل؛ فروشگاه اکانت‌های اورجینال بازی — دوتا ۲، GTA V، FC27 و ده‌ها بازی دیگر با تحویل فوری و ضمانت.",
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    locale: "fa_IR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default async function RootLayout({

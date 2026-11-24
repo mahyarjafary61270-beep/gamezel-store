@@ -49,6 +49,16 @@ export default function SettingsForm({ values }: { values: Record<string, string
             placeholder="@gamezel"
           />
         </label>
+        <label>
+          <span className="field-label">آدرس سایت (برای sitemap و robots)</span>
+          <input
+            name="site_url"
+            defaultValue={values.site_url}
+            className="input-dark"
+            dir="ltr"
+            placeholder="https://example.com"
+          />
+        </label>
       </div>
       <label className="block">
         <span className="field-label">راهنمای پرداخت (در صفحه پرداخت نمایش داده می‌شود)</span>

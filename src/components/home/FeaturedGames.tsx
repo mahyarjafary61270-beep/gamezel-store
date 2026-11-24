@@ -94,9 +94,11 @@ export default async function FeaturedGames() {
                         {g.englishTitle}
                       </span>
                     )}
-                    <span className="absolute right-4 top-4 rounded-full border border-white/20 bg-black/30 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-sm">
-                      {g.englishTitle}
-                    </span>
+                    {imgId && (
+                      <span className="absolute right-4 top-4 rounded-full border border-white/20 bg-black/30 px-3 py-1 text-[11px] font-bold text-white backdrop-blur-sm">
+                        {g.englishTitle}
+                      </span>
+                    )}
                   </div>
                   <div className="relative -mt-8 rounded-2xl border border-white/10 bg-night-900/80 p-5 backdrop-blur-xl">
                     <h3 className="text-lg font-black text-white">{g.title}</h3>
