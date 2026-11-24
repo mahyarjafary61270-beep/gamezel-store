@@ -13,6 +13,12 @@
 			"binding": "WORKER_SELF_REFERENCE",
 			"service": "gamezel"
 		}
+	],
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "gamezel-db",
+			"database_id": "562ef121-93e9-4599-ba3d-9276530f15e1"
+		}
 	]
-	// بایندینگ‌های D1 و R2 در گام ۲ اینجا اضافه می‌شوند
 }
