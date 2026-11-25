@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { formatPrice } from "@/lib/format";
 import { CARD_GRADS, getGameCover } from "@/lib/game-covers";
-import type { StoreChip, StoreListing } from "./StoreSection";
+import type { StoreChip, StoreListing } from "@/lib/store-data";
 
 const SORTS = [
   { id: "newest", label: "جدیدترین" },

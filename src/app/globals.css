@@ -221,4 +221,7 @@ body {
   .animate-zoom-in {
     animation: zoom-in 0.22s ease both;
   }
+  .animate-float-y {
+    animation: float-y 5s ease-in-out infinite;
+  }
 }
