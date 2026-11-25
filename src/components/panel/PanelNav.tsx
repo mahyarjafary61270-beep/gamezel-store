@@ -16,8 +16,8 @@ export default function PanelNav({ active }: { active: string }) {
             href={t.href}
             className={`rounded-xl px-5 py-2.5 text-sm font-bold transition-colors ${
               isActive
-                ? "bg-gradient-to-l from-violet-600 to-cyan-500 text-white shadow-[0_0_16px_rgba(139,92,246,0.4)]"
-                : "glass text-slate-300 hover:text-neon-cyan"
+                ? "bg-gradient-to-l from-emerald-600 to-teal-500 text-white shadow-[0_0_16px_rgba(16,185,129,0.4)]"
+                : "glass text-slate-300 hover:text-neon-mint"
             }`}
           >
             {t.label}

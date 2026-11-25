@@ -20,7 +20,7 @@ const FLOAT_CARDS = [
     en: "DOTA 2",
     desc: "رنک ایمورتال تا دیواین",
     price: "از ۴۹۰ هزار تومان",
-    grad: "from-rose-500 to-violet-700",
+    grad: "from-emerald-600 to-lime-500",
     delay: "0s",
   },
   {
@@ -28,7 +28,7 @@ const FLOAT_CARDS = [
     en: "GTA V",
     desc: "پول مود شده + پرایم",
     price: "از ۸۹۰ هزار تومان",
-    grad: "from-emerald-500 to-cyan-600",
+    grad: "from-lime-500 to-emerald-600",
     delay: "1.2s",
   },
   {
@@ -36,7 +36,7 @@ const FLOAT_CARDS = [
     en: "FC 27",
     desc: "آلتیمیت تیم قوی",
     price: "از ۱٬۲۹۰ هزار تومان",
-    grad: "from-amber-500 to-pink-600",
+    grad: "from-teal-500 to-emerald-500",
     delay: "2.4s",
   },
 ];
@@ -106,9 +106,9 @@ export default function Hero() {
       className="relative flex min-h-[100svh] items-center overflow-hidden pt-24"
     >
       <div className="grid-bg absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,black,transparent)]" />
-      <div className="animate-pulse-glow absolute -top-32 right-[-10%] h-[480px] w-[480px] rounded-full bg-violet-600/25 blur-[130px]" />
+      <div className="animate-pulse-glow absolute -top-32 right-[-10%] h-[480px] w-[480px] rounded-full bg-emerald-600/25 blur-[130px]" />
       <div
-        className="animate-pulse-glow absolute bottom-[-15%] left-[-8%] h-[420px] w-[420px] rounded-full bg-cyan-500/20 blur-[130px]"
+        className="animate-pulse-glow absolute bottom-[-15%] left-[-8%] h-[420px] w-[420px] rounded-full bg-orange-500/15 blur-[130px]"
         style={{ animationDelay: "1.6s" }}
       />
       <Particles />
@@ -118,10 +118,10 @@ export default function Hero() {
         className="container-x hero-parallax relative z-10 grid items-center gap-14 py-16 lg:grid-cols-[1.15fr_0.85fr]"
       >
         <div>
-          <span className="hero-badge glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold text-neon-cyan">
+          <span className="hero-badge glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold text-neon-mint">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
             فروشگاه تخصصی اکانت‌های گیمینگ
           </span>
@@ -141,7 +141,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link href="/#games" className="hero-cta glow-btn">
+            <Link href="/#store" className="hero-cta glow-btn">
               مشاهده اکانت‌ها
               <svg
                 viewBox="0 0 24 24"
@@ -212,7 +212,7 @@ export default function Hero() {
 
       <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2">
         <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/20 p-1.5">
-          <span className="h-2 w-1 animate-bounce rounded-full bg-neon-cyan" />
+          <span className="h-2 w-1 animate-bounce rounded-full bg-neon-mint" />
         </div>
       </div>
     </section>

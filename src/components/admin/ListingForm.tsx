@@ -117,7 +117,7 @@ export default function ListingForm({
           type="checkbox"
           name="isActive"
           defaultChecked={listing ? listing.isActive : true}
-          className="h-4 w-4 accent-violet-500"
+          className="h-4 w-4 accent-emerald-500"
         />
         <span className="text-sm font-bold">فعال باشد</span>
       </label>

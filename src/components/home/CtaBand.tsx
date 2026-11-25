@@ -5,8 +5,8 @@ export default function CtaBand() {
     <section id="about" className="relative py-24">
       <div className="container-x">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-violet-500/20 bg-gradient-to-l from-violet-950/80 via-night-800 to-cyan-950/60 px-8 py-14 text-center">
-            <div className="animate-pulse-glow absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-violet-600/30 blur-[100px]" />
+          <div className="relative overflow-hidden rounded-3xl border border-emerald-500/20 bg-gradient-to-l from-emerald-950/80 via-night-800 to-teal-950/60 px-8 py-14 text-center">
+            <div className="animate-pulse-glow absolute -top-20 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-600/30 blur-[100px]" />
             <div className="relative">
               <h2 className="text-2xl font-black text-white sm:text-3xl">
                 اکانت مورد نظرت رو <span className="neon-text">پیدا نکردی؟</span>

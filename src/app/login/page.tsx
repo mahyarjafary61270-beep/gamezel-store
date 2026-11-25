@@ -16,7 +16,7 @@ export default async function LoginPage() {
           <LoginForm />
           <p className="mt-6 text-center text-sm text-slate-400">
             حساب ندارید؟{" "}
-            <Link href="/register" className="font-bold text-neon-cyan transition-colors hover:text-cyan-300">
+            <Link href="/register" className="font-bold text-neon-mint transition-colors hover:text-emerald-300">
               ثبت‌نام کنید
             </Link>
           </p>

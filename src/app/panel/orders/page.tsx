@@ -34,7 +34,7 @@ export default async function PanelOrdersPage() {
       {myOrders.length === 0 ? (
         <div className="glass mt-8 rounded-2xl p-10 text-center">
           <p className="text-lg font-bold text-slate-200">هنوز سفارشی ثبت نکردی!</p>
-          <Link href="/#games" className="glow-btn mt-6 inline-block !px-6 !py-3 text-sm">
+          <Link href="/#store" className="glow-btn mt-6 inline-block !px-6 !py-3 text-sm">
             مشاهده اکانت‌ها
           </Link>
         </div>
@@ -46,7 +46,7 @@ export default async function PanelOrdersPage() {
               <li key={o.id}>
                 <Link
                   href={`/panel/orders/${o.id}`}
-                  className="glass flex flex-wrap items-center justify-between gap-4 rounded-2xl px-5 py-4 transition-colors hover:border-neon-cyan/40"
+                  className="glass flex flex-wrap items-center justify-between gap-4 rounded-2xl px-5 py-4 transition-colors hover:border-neon-mint/40"
                 >
                   <div className="flex items-center gap-4">
                     <span className="font-mono text-sm text-slate-400" dir="ltr">
@@ -57,7 +57,7 @@ export default async function PanelOrdersPage() {
                   <div className="flex items-center gap-4">
                     <span className="font-black text-white">{formatPrice(o.totalPrice)}</span>
                     <span className={`badge ${st.className}`}>{st.label}</span>
-                    <span className="text-xs font-bold text-neon-cyan">جزئیات ←</span>
+                    <span className="text-xs font-bold text-neon-mint">جزئیات ←</span>
                   </div>
                 </Link>
               </li>

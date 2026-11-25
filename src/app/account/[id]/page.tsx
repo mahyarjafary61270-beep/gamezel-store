@@ -61,11 +61,11 @@ export default async function AccountPage({
   return (
     <div className="container-x pb-24 pt-28">
       <nav className="text-xs text-slate-400">
-        <Link href="/" className="transition-colors hover:text-neon-cyan">
+        <Link href="/" className="transition-colors hover:text-neon-mint">
           خانه
         </Link>
         <span className="mx-2">/</span>
-        <Link href={`/games/${game.slug}`} className="transition-colors hover:text-neon-cyan">
+        <Link href={`/games/${game.slug}`} className="transition-colors hover:text-neon-mint">
           {game.title}
         </Link>
         <span className="mx-2">/</span>
@@ -81,7 +81,7 @@ export default async function AccountPage({
               className="aspect-square w-full object-cover"
             />
           ) : (
-            <div className="grid aspect-square w-full place-items-center bg-gradient-to-br from-violet-600/30 to-cyan-600/20">
+            <div className="grid aspect-square w-full place-items-center bg-gradient-to-br from-emerald-600/30 to-teal-600/20">
               <span dir="ltr" className="text-6xl font-black tracking-tighter text-white/20">
                 {game.englishTitle}
               </span>
@@ -90,7 +90,7 @@ export default async function AccountPage({
         </div>
 
         <div>
-          <span className="glass inline-block rounded-full px-4 py-1.5 text-xs font-bold text-neon-cyan">
+          <span className="glass inline-block rounded-full px-4 py-1.5 text-xs font-bold text-neon-mint">
             {game.title}
           </span>
           <h1 className="mt-4 text-3xl font-black text-white sm:text-4xl">{listing.title}</h1>
@@ -118,7 +118,7 @@ export default async function AccountPage({
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="text-xs text-slate-400">قیمت</p>
-                <p className="mt-1 text-2xl font-black text-neon-cyan">
+                <p className="mt-1 text-2xl font-black text-neon-mint">
                   {formatPrice(listing.price)}
                 </p>
               </div>

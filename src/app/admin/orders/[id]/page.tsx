@@ -83,7 +83,7 @@ export default async function AdminOrderDetailPage({ params }: { params: Promise
             <span className="mr-2 text-xs text-slate-400" dir="ltr">({buyer?.email ?? "—"})</span>
           </span>
           <span className="text-sm">
-            مبلغ کل: <b className="text-neon-cyan">{formatPrice(order.totalPrice)}</b>
+            مبلغ کل: <b className="text-neon-mint">{formatPrice(order.totalPrice)}</b>
           </span>
         </div>
         {order.status === "pending" && <OrderActions orderId={order.id} />}
@@ -143,7 +143,7 @@ export default async function AdminOrderDetailPage({ params }: { params: Promise
                               key={i}
                               className="rounded-lg border border-emerald-400/20 bg-emerald-500/5 px-2.5 py-1.5"
                             >
-                              <p className="font-mono text-xs text-cyan-200" dir="ltr">{c.username}</p>
+                              <p className="font-mono text-xs text-teal-200" dir="ltr">{c.username}</p>
                               <p className="font-mono text-xs text-slate-400" dir="ltr">{c.password}</p>
                             </div>
                           ))}

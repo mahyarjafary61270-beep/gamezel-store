@@ -116,7 +116,7 @@ export default function AdminNav({ userName }: { userName: string }) {
       <div className="hidden lg:block">
         <div className="admin-card !p-3">
           <div className="mb-2 flex items-center gap-2.5 border-b border-white/5 px-2 pb-3">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 text-base font-black text-white">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-emerald-600 to-teal-500 text-base font-black text-white">
               گ
             </span>
             <div className="min-w-0">

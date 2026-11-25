@@ -6,17 +6,18 @@ const config: Config = {
     extend: {
       colors: {
         night: {
-          950: "#05050f",
-          900: "#0a0a1c",
-          800: "#10102a",
-          700: "#181838",
+          950: "#030d09",
+          900: "#061712",
+          800: "#0a231b",
+          700: "#0f3226",
         },
         neon: {
-          purple: "#a855f7",
-          violet: "#8b5cf6",
-          blue: "#38bdf8",
-          cyan: "#22d3ee",
-          pink: "#f472b6",
+          green: "#34d399",
+          mint: "#6ee7b7",
+          emerald: "#10b981",
+          lime: "#a3e635",
+          teal: "#2dd4bf",
+          orange: "#f97316",
         },
       },
       fontFamily: {

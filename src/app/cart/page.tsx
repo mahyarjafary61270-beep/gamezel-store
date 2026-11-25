@@ -19,7 +19,7 @@ export default function CartPage() {
           <p className="mt-2 text-sm text-slate-400">
             برو یه نگاه به اکانت‌های آماده بنداز — تحویلشون فوریه.
           </p>
-          <Link href="/#games" className="glow-btn mt-6 inline-block !px-6 !py-3 text-sm">
+          <Link href="/#store" className="glow-btn mt-6 inline-block !px-6 !py-3 text-sm">
             مشاهده اکانت‌ها
           </Link>
         </div>
@@ -42,7 +42,7 @@ export default function CartPage() {
                     type="button"
                     onClick={() => setQuantity(item.listingId, item.quantity - 1)}
                     aria-label="کاهش تعداد"
-                    className="glass grid h-9 w-9 place-items-center rounded-lg text-slate-200 transition-colors hover:text-neon-cyan"
+                    className="glass grid h-9 w-9 place-items-center rounded-lg text-slate-200 transition-colors hover:text-neon-mint"
                   >
                     −
                   </button>
@@ -53,7 +53,7 @@ export default function CartPage() {
                     type="button"
                     onClick={() => setQuantity(item.listingId, item.quantity + 1)}
                     aria-label="افزایش تعداد"
-                    className="glass grid h-9 w-9 place-items-center rounded-lg text-slate-200 transition-colors hover:text-neon-cyan"
+                    className="glass grid h-9 w-9 place-items-center rounded-lg text-slate-200 transition-colors hover:text-neon-mint"
                   >
                     +
                   </button>
@@ -83,7 +83,7 @@ export default function CartPage() {
               </div>
               <div className="flex items-center justify-between">
                 <dt className="text-slate-400">مبلغ کل</dt>
-                <dd className="text-lg font-black text-neon-cyan">{formatPrice(total)}</dd>
+                <dd className="text-lg font-black text-neon-mint">{formatPrice(total)}</dd>
               </div>
             </dl>
             <Link
@@ -93,7 +93,7 @@ export default function CartPage() {
               ادامه و پرداخت
             </Link>
             <Link
-              href="/#games"
+              href="/#store"
               className="ghost-btn mt-3 block !py-3 text-center text-sm"
             >
               ادامه خرید

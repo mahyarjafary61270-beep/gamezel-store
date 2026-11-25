@@ -1,27 +1,27 @@
 import Link from "next/link";
 
 const QUICK_LINKS = [
-  { href: "/#games", label: "فروشگاه بازی‌ها" },
+  { href: "/#store", label: "فروشگاه بازی‌ها" },
   { href: "/#features", label: "چرا گیمزل؟" },
   { href: "/#about", label: "درباره ما" },
   { href: "/#faq", label: "سوالات متداول" },
 ];
 
 const GAMES = [
-  { href: "/#games", label: "اکانت دوتا ۲" },
-  { href: "/#games", label: "اکانت GTA V" },
-  { href: "/#games", label: "اکانت FC 27" },
-  { href: "/#games", label: "اکانت ولورانت" },
+  { href: "/games/dota-2", label: "اکانت دوتا ۲" },
+  { href: "/games/gta-v", label: "اکانت GTA V" },
+  { href: "/games/fc-27", label: "اکانت FC 27" },
+  { href: "/games/valorant", label: "اکانت ولورانت" },
 ];
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/5 bg-night-900/60">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-violet-500/60 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-emerald-500/60 to-transparent" />
       <div className="container-x grid gap-10 py-14 md:grid-cols-3">
         <div className="space-y-4">
           <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 shadow-[0_0_18px_rgba(139,92,246,0.55)]">
+            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-emerald-600 to-teal-500 shadow-[0_0_18px_rgba(16,185,129,0.55)]">
               <svg
                 viewBox="0 0 24 24"
                 className="h-5 w-5 text-white"
@@ -46,7 +46,7 @@ export default function Footer() {
             <a
               href="#"
               aria-label="تلگرام"
-              className="glass grid h-10 w-10 place-items-center rounded-xl text-slate-300 transition-all hover:-translate-y-1 hover:text-sky-400"
+              className="glass grid h-10 w-10 place-items-center rounded-xl text-slate-300 transition-all hover:-translate-y-1 hover:text-teal-300"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ export default function Footer() {
             <a
               href="#"
               aria-label="دیسکورد"
-              className="glass grid h-10 w-10 place-items-center rounded-xl text-slate-300 transition-all hover:-translate-y-1 hover:text-indigo-400"
+              className="glass grid h-10 w-10 place-items-center rounded-xl text-slate-300 transition-all hover:-translate-y-1 hover:text-lime-300"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
                 <path d="M19.3 5.6A17 17 0 0 0 15 4.3l-.2.4a15.7 15.7 0 0 1 4.1 2c-3.4-1.7-7-1.7-10.4 0a15.7 15.7 0 0 1 4.2-2L12.4 4a17 17 0 0 0-4.3 1.3C5.4 9.6 4.7 13.6 5 17.4A17 17 0 0 0 10.2 20l.9-1.4c-.7-.3-1.3-.6-1.9-.9l.5-.4a12.3 12.3 0 0 0 10.6 0l.5.4c-.6.3-1.3.6-1.9.9l.9 1.4a17 17 0 0 0 5.2-2.6c.4-4.5-.8-8.4-3.7-11.8ZM9.7 15c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm4.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z" />
@@ -93,7 +93,7 @@ export default function Footer() {
               <li key={l.label}>
                 <Link
                   href={l.href}
-                  className="text-sm text-slate-400 transition-colors hover:text-neon-cyan"
+                  className="text-sm text-slate-400 transition-colors hover:text-neon-mint"
                 >
                   {l.label}
                 </Link>
@@ -109,7 +109,7 @@ export default function Footer() {
               <li key={g.label}>
                 <Link
                   href={g.href}
-                  className="text-sm text-slate-400 transition-colors hover:text-neon-cyan"
+                  className="text-sm text-slate-400 transition-colors hover:text-neon-mint"
                 >
                   {g.label}
                 </Link>

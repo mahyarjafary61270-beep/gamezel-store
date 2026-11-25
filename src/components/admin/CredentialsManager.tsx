@@ -30,7 +30,7 @@ export default function CredentialsManager({
               className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2"
             >
               <div className="min-w-0">
-                <p className="truncate font-mono text-xs text-cyan-200" dir="ltr">
+                <p className="truncate font-mono text-xs text-teal-200" dir="ltr">
                   {c.username}
                 </p>
                 <p className="truncate font-mono text-xs text-slate-400" dir="ltr">

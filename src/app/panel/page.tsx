@@ -31,7 +31,7 @@ export default async function PanelPage() {
       <div className="mt-8 grid gap-6 lg:grid-cols-[320px_1fr]">
         <aside className="glass h-fit rounded-2xl p-6">
           <div className="flex items-center gap-4">
-            <span className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-violet-600 to-cyan-500 text-xl font-black text-white">
+            <span className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-500 text-xl font-black text-white">
               {user.name.slice(0, 1)}
             </span>
             <div className="min-w-0">
@@ -60,7 +60,7 @@ export default async function PanelPage() {
             </div>
             <div className="flex items-center justify-between">
               <dt className="text-slate-400">مجموع خریدها</dt>
-              <dd className="font-black text-neon-cyan">{formatPrice(totalSpent)}</dd>
+              <dd className="font-black text-neon-mint">{formatPrice(totalSpent)}</dd>
             </div>
           </dl>
         </aside>
@@ -69,7 +69,7 @@ export default async function PanelPage() {
           <section className="glass rounded-2xl p-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <h2 className="text-lg font-black text-white">آخرین سفارش‌ها</h2>
-              <Link href="/panel/orders" className="text-sm font-bold text-neon-cyan hover:underline">
+              <Link href="/panel/orders" className="text-sm font-bold text-neon-mint hover:underline">
                 مشاهده همه
               </Link>
             </div>
@@ -80,7 +80,7 @@ export default async function PanelPage() {
                 <p className="mt-2 text-sm text-slate-400">
                   از فروشگاه یه اکانت انتخاب کن — بعد از تایید پرداخت اینجا تحویل می‌گیری.
                 </p>
-                <Link href="/#games" className="glow-btn mt-5 inline-block !px-6 !py-3 text-sm">
+                <Link href="/#store" className="glow-btn mt-5 inline-block !px-6 !py-3 text-sm">
                   مشاهده اکانت‌ها
                 </Link>
               </div>

@@ -84,7 +84,7 @@ export default async function PanelOrderDetailPage({
           <span className={`badge ${st.className}`}>{st.label}</span>
           <span className="text-slate-400">{formatDate(order.createdAt)}</span>
           <span>
-            مبلغ کل: <b className="text-neon-cyan">{formatPrice(order.totalPrice)}</b>
+            مبلغ کل: <b className="text-neon-mint">{formatPrice(order.totalPrice)}</b>
           </span>
         </div>
 
@@ -135,7 +135,7 @@ export default async function PanelOrderDetailPage({
                             >
                               <div className="flex flex-wrap items-center gap-2 text-sm">
                                 <span className="text-slate-400">یوزرنیم:</span>
-                                <span className="font-mono font-bold text-cyan-200" dir="ltr">
+                                <span className="font-mono font-bold text-teal-200" dir="ltr">
                                   {c.username}
                                 </span>
                               </div>

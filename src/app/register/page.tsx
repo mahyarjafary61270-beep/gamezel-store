@@ -16,7 +16,7 @@ export default async function RegisterPage() {
           <RegisterForm />
           <p className="mt-6 text-center text-sm text-slate-400">
             قبلا ثبت‌نام کرده‌اید؟{" "}
-            <Link href="/login" className="font-bold text-neon-cyan transition-colors hover:text-cyan-300">
+            <Link href="/login" className="font-bold text-neon-mint transition-colors hover:text-emerald-300">
               وارد شوید
             </Link>
           </p>

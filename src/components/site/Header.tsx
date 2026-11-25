@@ -6,7 +6,7 @@ import { logoutAction } from "@/lib/auth-actions";
 import { useCart } from "@/components/cart/CartProvider";
 
 const NAV = [
-  { href: "/#games", label: "بازی‌ها" },
+  { href: "/#store", label: "بازی‌ها" },
   { href: "/#features", label: "چرا گیمزل؟" },
   { href: "/#about", label: "درباره ما" },
   { href: "/#faq", label: "سوالات متداول" },
@@ -22,7 +22,7 @@ export default function Header({ user }: { user: HeaderUser }) {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-night-950/70 backdrop-blur-xl">
       <div className="container-x flex h-16 items-center justify-between gap-4">
         <Link href="/" className="group flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-violet-600 to-cyan-500 shadow-[0_0_18px_rgba(139,92,246,0.55)] transition-transform duration-300 group-hover:rotate-12">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-emerald-600 to-teal-500 shadow-[0_0_18px_rgba(16,185,129,0.55)] transition-transform duration-300 group-hover:rotate-12">
             <svg
               viewBox="0 0 24 24"
               className="h-5 w-5 text-white"
@@ -47,7 +47,7 @@ export default function Header({ user }: { user: HeaderUser }) {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-neon-cyan"
+              className="text-sm font-medium text-slate-300 transition-colors hover:text-neon-mint"
             >
               {item.label}
             </Link>
@@ -58,7 +58,7 @@ export default function Header({ user }: { user: HeaderUser }) {
           <Link
             href="/cart"
             aria-label="سبد خرید"
-            className="glass relative grid h-10 w-10 place-items-center rounded-xl text-slate-200 transition-colors hover:text-neon-cyan"
+            className="glass relative grid h-10 w-10 place-items-center rounded-xl text-slate-200 transition-colors hover:text-neon-mint"
           >
             <svg
               viewBox="0 0 24 24"
@@ -73,7 +73,7 @@ export default function Header({ user }: { user: HeaderUser }) {
               <circle cx="19" cy="21" r="1.5" />
               <path d="M2.5 3h2l2.6 12.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L22.5 7H6" />
             </svg>
-            <span className="absolute -left-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-br from-violet-500 to-cyan-500 px-1 text-[11px] font-bold text-white shadow-[0_0_10px_rgba(139,92,246,0.7)]">
+            <span className="absolute -left-1.5 -top-1.5 grid h-5 min-w-5 place-items-center rounded-full bg-gradient-to-br from-orange-500 to-amber-400 px-1 text-[11px] font-bold text-white shadow-[0_0_10px_rgba(16,185,129,0.7)]">
               {count.toLocaleString("fa-IR")}
             </span>
           </Link>
@@ -131,7 +131,7 @@ export default function Header({ user }: { user: HeaderUser }) {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-neon-cyan"
+              className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-neon-mint"
             >
               {item.label}
             </Link>

@@ -67,7 +67,7 @@ export default function ImagePicker({ existing }: { existing?: { id: string; alt
         <button
           type="button"
           onClick={() => inputRef.current?.click()}
-          className="grid h-24 w-36 place-items-center rounded-xl border border-dashed border-white/20 text-sm text-slate-400 transition-colors hover:border-cyan-300/40 hover:text-cyan-200"
+          className="grid h-24 w-36 place-items-center rounded-xl border border-dashed border-white/20 text-sm text-slate-400 transition-colors hover:border-emerald-300/40 hover:text-teal-200"
         >
           {busy ? "در حال پردازش..." : "+ افزودن تصویر"}
         </button>

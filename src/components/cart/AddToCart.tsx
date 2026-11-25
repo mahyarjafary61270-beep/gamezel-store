@@ -52,7 +52,7 @@ export default function AddToCart({
         افزودن به سبد خرید
       </button>
       {added && (
-        <Link href="/cart" className="text-sm font-bold text-neon-cyan hover:underline">
+        <Link href="/cart" className="text-sm font-bold text-neon-mint hover:underline">
           اضافه شد — مشاهده سبد
         </Link>
       )}

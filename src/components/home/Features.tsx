@@ -46,10 +46,10 @@ const FEATURES = [
 export default function Features() {
   return (
     <section id="features" className="relative py-24">
-      <div className="absolute right-[-10%] top-1/3 h-80 w-80 rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="absolute right-[-10%] top-1/3 h-80 w-80 rounded-full bg-emerald-500/10 blur-[120px]" />
       <div className="container-x relative">
         <Reveal className="text-center">
-          <span className="glass inline-block rounded-full px-4 py-1.5 text-xs font-bold text-neon-cyan">
+          <span className="glass inline-block rounded-full px-4 py-1.5 text-xs font-bold text-neon-mint">
             مزیت‌ها
           </span>
           <h2 className="mt-4 text-3xl font-black text-white sm:text-4xl">
@@ -61,7 +61,7 @@ export default function Features() {
           {FEATURES.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.12}>
               <div className="card-glow glass h-full rounded-2xl p-6">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-violet-600/30 to-cyan-500/30 text-neon-cyan shadow-[0_0_20px_rgba(139,92,246,0.25)]">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-emerald-600/30 to-lime-500/30 text-neon-mint shadow-[0_0_20px_rgba(16,185,129,0.25)]">
                   <svg
                     viewBox="0 0 24 24"
                     className="h-6 w-6"

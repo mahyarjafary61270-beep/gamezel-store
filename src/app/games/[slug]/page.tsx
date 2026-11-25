@@ -86,7 +86,7 @@ export default async function GamePage({
   return (
     <div className="container-x pb-24 pt-28">
       <nav className="text-xs text-slate-400">
-        <Link href="/" className="transition-colors hover:text-neon-cyan">
+        <Link href="/" className="transition-colors hover:text-neon-mint">
           خانه
         </Link>
         <span className="mx-2">/</span>
@@ -102,7 +102,7 @@ export default async function GamePage({
               className="aspect-square w-full object-cover"
             />
           ) : (
-            <div className="grid aspect-square w-full place-items-center bg-gradient-to-br from-violet-600/30 to-cyan-600/20">
+            <div className="grid aspect-square w-full place-items-center bg-gradient-to-br from-emerald-600/30 to-teal-600/20">
               <span dir="ltr" className="text-6xl font-black tracking-tighter text-white/20">
                 {game.englishTitle}
               </span>
@@ -112,7 +112,7 @@ export default async function GamePage({
 
         <div>
           {category && (
-            <span className="glass inline-block rounded-full px-4 py-1.5 text-xs font-bold text-neon-cyan">
+            <span className="glass inline-block rounded-full px-4 py-1.5 text-xs font-bold text-neon-mint">
               {category.name}
             </span>
           )}
@@ -131,7 +131,7 @@ export default async function GamePage({
                 <li key={f} className="flex items-start gap-2 text-sm text-slate-200">
                   <svg
                     viewBox="0 0 24 24"
-                    className="mt-0.5 h-4 w-4 shrink-0 text-neon-cyan"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-neon-mint"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2.5"
@@ -181,10 +181,10 @@ export default async function GamePage({
                     </p>
                   )}
                   <div className="mt-5 flex items-center justify-between">
-                    <span className="text-lg font-black text-neon-cyan">
+                    <span className="text-lg font-black text-neon-mint">
                       {formatPrice(l.price)}
                     </span>
-                    <span className="flex items-center gap-1 text-xs font-bold text-slate-300 transition-colors group-hover:text-neon-cyan">
+                    <span className="flex items-center gap-1 text-xs font-bold text-slate-300 transition-colors group-hover:text-neon-mint">
                       مشاهده
                       <svg
                         viewBox="0 0 24 24"

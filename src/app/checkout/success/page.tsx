@@ -46,7 +46,7 @@ export default async function CheckoutSuccessPage({
         </div>
         <h1 className="mt-5 text-2xl font-black text-white">سفارش ثبت شد!</h1>
         <p className="mt-3 text-sm leading-7 text-slate-400">
-          سفارش <span dir="ltr" className="font-bold text-neon-cyan">{shortId(orderRow.id)}</span> با
+          سفارش <span dir="ltr" className="font-bold text-neon-mint">{shortId(orderRow.id)}</span> با
           موفقیت ثبت شد و در صف بررسی قرار گرفت. بعد از تایید رسید توسط ادمین، اطلاعات
           اکانت در پنل کاربری‌ات قرار می‌گیرد.
         </p>
@@ -69,7 +69,7 @@ export default async function CheckoutSuccessPage({
           <dt className="text-slate-400">
             وضعیت: <span className="badge badge-warning">در انتظار بررسی</span>
           </dt>
-          <dd className="font-black text-neon-cyan">{formatPrice(orderRow.totalPrice)}</dd>
+          <dd className="font-black text-neon-mint">{formatPrice(orderRow.totalPrice)}</dd>
         </dl>
         <p className="mt-3 text-xs text-slate-500">{formatDate(orderRow.createdAt)}</p>
 
@@ -80,7 +80,7 @@ export default async function CheckoutSuccessPage({
           >
             مشاهده سفارش در پنل کاربری
           </Link>
-          <Link href="/#games" className="ghost-btn !px-6 !py-3 text-sm">
+          <Link href="/#store" className="ghost-btn !px-6 !py-3 text-sm">
             بازگشت به فروشگاه
           </Link>
         </div>

@@ -26,7 +26,7 @@ export default function CheckoutForm({
       <div className="glass mt-8 rounded-2xl p-10 text-center">
         <p className="text-lg font-bold text-slate-200">سبد خریدت خالیه!</p>
         <p className="mt-2 text-sm text-slate-400">اول یه اکانت به سبد اضافه کن.</p>
-        <Link href="/#games" className="glow-btn mt-6 inline-block !px-6 !py-3 text-sm">
+        <Link href="/#store" className="glow-btn mt-6 inline-block !px-6 !py-3 text-sm">
           مشاهده اکانت‌ها
         </Link>
       </div>
@@ -57,7 +57,7 @@ export default function CheckoutForm({
           <div className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
             <div className="rounded-xl border border-white/10 bg-black/20 p-4">
               <p className="text-xs text-slate-400">شماره کارت</p>
-              <p dir="ltr" className="mt-1 text-right font-black tracking-wider text-neon-cyan">
+              <p dir="ltr" className="mt-1 text-right font-black tracking-wider text-neon-mint">
                 {values.card_number || "—"}
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function CheckoutForm({
             بعد از واریز، از رسید بانکی اسکرین‌شات یا عکس بگیر و آپلود کن (حداکثر {MAX_RECEIPTS.toLocaleString("fa-IR")} تصویر).
           </p>
           <label
-            className={`mt-4 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-white/15 bg-black/20 px-6 py-10 text-center transition-colors hover:border-neon-cyan/50 ${
+            className={`mt-4 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-white/15 bg-black/20 px-6 py-10 text-center transition-colors hover:border-neon-mint/50 ${
               uploading ? "pointer-events-none opacity-60" : ""
             }`}
           >
@@ -157,7 +157,7 @@ export default function CheckoutForm({
           </div>
           <div className="flex items-center justify-between">
             <dt className="text-slate-400">مبلغ کل</dt>
-            <dd className="text-lg font-black text-neon-cyan">{formatPrice(total)}</dd>
+            <dd className="text-lg font-black text-neon-mint">{formatPrice(total)}</dd>
           </div>
         </dl>
 

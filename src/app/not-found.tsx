@@ -18,7 +18,7 @@ export default function NotFound() {
           <Link href="/" className="glow-btn !px-6 !py-2.5 text-sm">
             بازگشت به خانه
           </Link>
-          <Link href="/#games" className="ghost-btn !px-6 !py-2.5 text-sm">
+          <Link href="/#store" className="ghost-btn !px-6 !py-2.5 text-sm">
             مشاهده بازی‌ها
           </Link>
         </div>
