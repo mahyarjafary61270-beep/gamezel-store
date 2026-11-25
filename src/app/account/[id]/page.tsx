@@ -3,9 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { and, asc, count, eq, isNull } from "drizzle-orm";
 import AddToCart from "@/components/cart/AddToCart";
+import ImageGallery from "@/components/account/ImageGallery";
 import { getDb } from "@/db";
 import { credentials, games, images, listings } from "@/db/schema";
 import { formatPrice } from "@/lib/format";
+import { getGameCover } from "@/lib/game-covers";
 
 export const dynamic = "force-dynamic";
 
@@ -57,6 +59,7 @@ export default async function AccountPage({
   const stock = stockRows[0]?.count ?? 0;
 
   const specs = Object.entries(listing.specs ?? {});
+  const cover = getGameCover(game.slug);
 
   return (
     <div className="container-x pb-24 pt-28">
@@ -73,21 +76,13 @@ export default async function AccountPage({
       </nav>
 
       <div className="mt-8 grid gap-10 lg:grid-cols-[420px_1fr]">
-        <div className="card-glow glass overflow-hidden rounded-2xl">
-          {listingImages[0] ? (
-            <img
-              src={`/api/images/${listingImages[0].id}`}
-              alt={listingImages[0].alt || listing.title}
-              className="aspect-square w-full object-cover"
-            />
-          ) : (
-            <div className="grid aspect-square w-full place-items-center bg-gradient-to-br from-emerald-600/30 to-teal-600/20">
-              <span dir="ltr" className="text-6xl font-black tracking-tighter text-white/20">
-                {game.englishTitle}
-              </span>
-            </div>
-          )}
-        </div>
+        <ImageGallery
+          imageIds={listingImages.map((i) => i.id)}
+          alt={listing.title}
+          fallbackSrc={cover?.src ?? null}
+          fallbackPos={cover?.pos}
+          fallbackTitle={game.englishTitle}
+        />
 
         <div>
           <span className="glass inline-block rounded-full px-4 py-1.5 text-xs font-bold text-neon-mint">

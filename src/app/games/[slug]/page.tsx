@@ -5,6 +5,7 @@ import { and, asc, count, eq, inArray, isNull } from "drizzle-orm";
 import { getDb } from "@/db";
 import { categories, credentials, games, images, listings } from "@/db/schema";
 import { formatPrice } from "@/lib/format";
+import { CARD_GRADS, getGameCover } from "@/lib/game-covers";
 
 export const dynamic = "force-dynamic";
 
@@ -83,6 +84,30 @@ export default async function GamePage({
 
   const stockByListing = new Map(stockRows.map((s) => [s.listingId, s.count]));
 
+  const listingImageRows =
+    gameListings.length > 0
+      ? await db
+          .select({ ownerId: images.ownerId, id: images.id })
+          .from(images)
+          .where(
+            and(
+              eq(images.ownerType, "listing"),
+              inArray(
+                images.ownerId,
+                gameListings.map((l) => l.id)
+              )
+            )
+          )
+          .orderBy(asc(images.ownerId), asc(images.sortOrder))
+      : [];
+
+  const imageByListing = new Map<string, string>();
+  for (const r of listingImageRows) {
+    if (!imageByListing.has(r.ownerId)) imageByListing.set(r.ownerId, r.id);
+  }
+
+  const cover = getGameCover(game.slug);
+
   return (
     <div className="container-x pb-24 pt-28">
       <nav className="text-xs text-slate-400">
@@ -99,6 +124,13 @@ export default async function GamePage({
             <img
               src={`/api/images/${gameImages[0].id}`}
               alt={gameImages[0].alt || game.title}
+              className="aspect-square w-full object-cover"
+            />
+          ) : cover ? (
+            <img
+              src={cover.src}
+              alt={game.title}
+              style={{ objectPosition: cover.pos }}
               className="aspect-square w-full object-cover"
             />
           ) : (
@@ -167,7 +199,32 @@ export default async function GamePage({
                   href={`/account/${l.id}`}
                   className="card-glow glass group block rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1"
                 >
-                  <div className="flex items-start justify-between gap-3">
+                  <div
+                    className="relative h-28 overflow-hidden rounded-xl"
+                    style={{ background: CARD_GRADS[0] }}
+                  >
+                    {imageByListing.get(l.id) ? (
+                      <img
+                        src={`/api/images/${imageByListing.get(l.id)}`}
+                        alt=""
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : cover ? (
+                      <img
+                        src={cover.src}
+                        alt=""
+                        loading="lazy"
+                        style={{ objectPosition: cover.pos }}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <span dir="ltr" className="absolute bottom-1 left-3 text-3xl font-black tracking-tighter text-white/15">
+                        {game.englishTitle}
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-4 flex items-start justify-between gap-3">
                     <h3 className="font-black text-white">{l.title}</h3>
                     {stock > 0 ? (
                       <span className="badge badge-success shrink-0">{stock.toLocaleString("fa-IR")} عدد</span>

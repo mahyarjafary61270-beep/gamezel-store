@@ -20,6 +20,8 @@ const FLOAT_CARDS = [
     en: "DOTA 2",
     desc: "رنک ایمورتال تا دیواین",
     price: "از ۴۹۰ هزار تومان",
+    img: "/images/games/dota-2.jpg",
+    pos: "50% 50%",
     grad: "from-emerald-600 to-lime-500",
     delay: "0s",
   },
@@ -28,6 +30,8 @@ const FLOAT_CARDS = [
     en: "GTA V",
     desc: "پول مود شده + پرایم",
     price: "از ۸۹۰ هزار تومان",
+    img: "/images/games/gta-v.jpg",
+    pos: "50% 50%",
     grad: "from-lime-500 to-emerald-600",
     delay: "1.2s",
   },
@@ -36,6 +40,8 @@ const FLOAT_CARDS = [
     en: "FC 27",
     desc: "آلتیمیت تیم قوی",
     price: "از ۱٬۲۹۰ هزار تومان",
+    img: "/images/games/fc-27.jpg",
+    pos: "50% 36%",
     grad: "from-teal-500 to-emerald-500",
     delay: "2.4s",
   },
@@ -189,9 +195,14 @@ export default function Hero() {
             >
               <div className="flex items-center gap-3">
                 <span
-                  className={`grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br ${c.grad} text-lg font-black text-white shadow-lg`}
+                  className={`relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br ${c.grad} p-0.5 shadow-lg`}
                 >
-                  {c.en.charAt(0)}
+                  <img
+                    src={c.img}
+                    alt={c.name}
+                    className="h-full w-full rounded-[10px] object-cover"
+                    style={{ objectPosition: c.pos }}
+                  />
                 </span>
                 <div>
                   <div className="text-sm font-black text-white">{c.name}</div>
